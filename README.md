@@ -18,7 +18,9 @@ Run it: python3 model_usage_analyzer.py
 Simulates AI API requests across multiple models — classifies response codes, retries on failure, and produces a health report with per-model success rates and latency.
 Covers: functions, default arguments, type hints, docstrings, return values, if/elif/else, while loops, break/continue.
 
+Run it: python3 api_health_checker.py
+
 ## python_exercises_week1.py
 Weekly exercise file covering Topics 1-5: Variables & Data Types, Lists/Dicts/Sets, Control Flow, Functions, and Error Handling.
 
-Run it: python3 api_health_checker.py
+Run it: python3 python_exercises_week1.py
