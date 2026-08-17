@@ -24,3 +24,9 @@ Run it: python3 api_health_checker.py
 Weekly exercise file covering Topics 1-5: Variables & Data Types, Lists/Dicts/Sets, Control Flow, Functions, and Error Handling.
 
 Run it: python3 python_exercises_week1.py
+
+## Day 4: api_response_parser.py
+Parses mock AI API responses. It handles missing fields, wrong data types, and HTTP errors using custom exceptions.
+Covers: try/except, custom exception classes, raising errors, ValueError, KeyError.
+
+Run it: python3 api_response_parser.py
