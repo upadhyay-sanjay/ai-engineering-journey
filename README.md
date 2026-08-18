@@ -30,3 +30,9 @@ Parses mock AI API responses. It handles missing fields, wrong data types, and H
 Covers: try/except, custom exception classes, raising errors, ValueError, KeyError.
 
 Run it: python3 api_response_parser.py
+
+## Day 5: log_cleaner.py
+Cleans messy AI API log entries using list and dict comprehensions — strips whitespace from model names, separates successes from errors, removes duplicates, classifies call speed, and totals tokens per model.
+Covers: list comprehensions, dict comprehensions, filtering, transforming, set deduplication.
+
+Run it: python3 log_cleaner.py
