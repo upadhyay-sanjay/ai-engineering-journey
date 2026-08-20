@@ -42,3 +42,9 @@ A client that sends requests to both OpenAI and Anthropic using the same code st
 Covers: classes, __init__, inheritance, super(), __repr__, methods.
 
 Run it: python3 llm_client.py
+
+## Day 7: doc_processor.py
+Reads raw documents, enriches each one with word count, character count, and timestamp, saves results to disk, and loads config securely from environment variables.
+Covers: json.load, json.dump, datetime, os.environ, environment variables, file I/O.
+
+Run it: python3 doc_processor.py
