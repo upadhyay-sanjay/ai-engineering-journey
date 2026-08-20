@@ -36,3 +36,9 @@ Cleans messy AI API log entries using list and dict comprehensions — strips wh
 Covers: list comprehensions, dict comprehensions, filtering, transforming, set deduplication.
 
 Run it: python3 log_cleaner.py
+
+## Day 6: llm_client.py
+A client that sends requests to both OpenAI and Anthropic using the same code structure. Demonstrates inheritance — one base class holds shared logic, each provider only defines what is different.
+Covers: classes, __init__, inheritance, super(), __repr__, methods.
+
+Run it: python3 llm_client.py
