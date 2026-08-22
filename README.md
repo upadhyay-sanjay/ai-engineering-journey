@@ -48,3 +48,9 @@ Reads raw documents, enriches each one with word count, character count, and tim
 Covers: json.load, json.dump, datetime, os.environ, environment variables, file I/O.
 
 Run it: python3 doc_processor.py
+
+## Day 8: model_benchmarker.py
+Benchmarks multiple AI models concurrently — streams each response word by word, handles failures gracefully, and reports speed and word count per model.
+Covers: asyncio.gather, async generators, streaming, concurrent error handling.
+
+Run it: python3 model_benchmarker.py
