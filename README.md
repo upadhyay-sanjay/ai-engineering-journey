@@ -54,3 +54,12 @@ Benchmarks multiple AI models concurrently — streams each response word by wor
 Covers: asyncio.gather, async generators, streaming, concurrent error handling.
 
 Run it: python3 model_benchmarker.py
+
+
+## Day 9: rag_validator.py
+Validates incoming queries and document chunks before they enter a RAG pipeline. Rejects bad data at the entry point with specific error messages.
+Covers: Pydantic models, field validators, safe parsing, Optional fields.
+
+Run it: python3 rag_validator.py
+
+
