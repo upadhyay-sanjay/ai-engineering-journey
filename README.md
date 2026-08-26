@@ -62,4 +62,9 @@ Covers: Pydantic models, field validators, safe parsing, Optional fields.
 
 Run it: python3 rag_validator.py
 
+## FastAPI Exercises: python_exercises_fastapi.py
 
+A working REST API with 6 endpoints — document upload, retrieval, listing, querying, and error simulation. All 27 tests passing.
+Covers: FastAPI endpoints, Pydantic validation, authentication, async, HTTP status codes.
+
+Run it: python3 -m uvicorn python_exercises_fastapi:app --reload
