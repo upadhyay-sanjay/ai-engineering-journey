@@ -68,3 +68,7 @@ A working REST API with 6 endpoints — document upload, retrieval, listing, que
 Covers: FastAPI endpoints, Pydantic validation, authentication, async, HTTP status codes.
 
 Run it: python3 -m uvicorn python_exercises_fastapi:app --reload
+
+## Flagship Project: RAG Study Buddy
+A full Retrieval-Augmented Generation assistant built after completing a RAG + LangChain crash course.
+See the [rag-study-buddy/](./rag-study-buddy/) folder for details and progress.
