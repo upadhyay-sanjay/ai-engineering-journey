@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .env
+
+# rag-study-buddy: don't commit the virtual env or the generated vector store
+rag-study-buddy/venv/
+rag-study-buddy/data/vector_store/
