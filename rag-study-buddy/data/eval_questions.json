@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1,
+    "question": "What does the acronym RAG stand for?",
+    "expected_answer": "Retrieval Augmented Generation.",
+    "expected_source": "~1:29, where the term is first defined.",
+    "type": "easy"
+  },
+  {
+    "id": 2,
+    "question": "What are the two main disadvantages of relying on an LLM alone, without RAG?",
+    "expected_answer": "First, hallucination — the LLM only knows what it was trained on, so anything after its training cutoff is unknown to it, yet it will still confidently generate an answer rather than admit it doesn't know. Second, it can't incorporate private or frequently-changing data (like a company's internal HR or finance policies) without expensive, slow fine-tuning.",
+    "expected_source": "~2:40-8:12, the 'disadvantages of using only an LLM' section.",
+    "type": "medium"
+  },
+  {
+    "id": 3,
+    "question": "What are the two main pipelines that make up a RAG system, as described in the video?",
+    "expected_answer": "The data injection pipeline (parsing source data, chunking it, generating embeddings, and storing them in a vector database) and the retrieval pipeline (converting a user's query into an embedding, retrieving relevant context from the vector store, and generating an answer with the help of an LLM).",
+    "expected_source": "~8:12-18:16.",
+    "type": "medium"
+  },
+  {
+    "id": 4,
+    "question": "What does \"augmentation\" mean in this context?",
+    "expected_answer": "Combining the context retrieved from the vector store with the user's prompt before sending both to the LLM, so the LLM's instructions include the relevant retrieved information.",
+    "expected_source": "~18:16, revisited ~1:30:23.",
+    "type": "medium"
+  },
+  {
+    "id": 5,
+    "question": "What two core components make up a LangChain Document object, and why does the metadata part matter?",
+    "expected_answer": "page_content (the actual text) and metadata (extra info like source filename, page number, author, date created). Metadata matters because it lets you apply filters during a similarity search later — for example, narrowing results to a specific author or source file.",
+    "expected_source": "~34:47-38:11.",
+    "type": "medium"
+  },
+  {
+    "id": 6,
+    "question": "Does the video explain how to deploy the finished RAG application to a production cloud server (e.g., AWS or GCP hosting)?",
+    "expected_answer": "Not covered — the video stays focused on building and running the pipeline locally/in a notebook and script form; deployment isn't discussed.",
+    "expected_source": "n/a",
+    "type": "trap"
+  },
+  {
+    "id": 7,
+    "question": "What two PDF loader options does the instructor mention, and which one does he say is generally better?",
+    "expected_answer": "PyPDFLoader and PyMuPDFLoader — he states PyMuPDFLoader is the better of the two.",
+    "expected_source": "~45:14.",
+    "type": "easy"
+  },
+  {
+    "id": 8,
+    "question": "In the instructor's coding example, how many PDF files and total pages were loaded, and how many chunks did splitting produce?",
+    "expected_answer": "4 PDF files (15, 27, 21, and 1 pages respectively) totaling 64 page-level documents, split into 359 chunks.",
+    "expected_source": "~49:53-1:00:48.",
+    "type": "easy"
+  },
+  {
+    "id": 9,
+    "question": "What chunk_size and chunk_overlap values does the instructor use with RecursiveCharacterTextSplitter in his notebook example?",
+    "expected_answer": "chunk_size=1000 and chunk_overlap=200.",
+    "expected_source": "~51:32-1:00:48.",
+    "type": "easy"
+  },
+  {
+    "id": 10,
+    "question": "What embedding model does the instructor use, and how many dimensions does it output?",
+    "expected_answer": "all-MiniLM-L6-v2 (via the sentence-transformers library, from Hugging Face), producing 384-dimensional vectors.",
+    "expected_source": "~1:00:48-1:08:43.",
+    "type": "easy"
+  },
+  {
+    "id": 11,
+    "question": "What two open-source vector store options does the instructor mention?",
+    "expected_answer": "Chroma and FAISS.",
+    "expected_source": "~1:00:48.",
+    "type": "easy"
+  },
+  {
+    "id": 12,
+    "question": "In the RAGRetriever class's retrieve function, what are the steps that happen when it's called with a query?",
+    "expected_answer": "The query text is converted into an embedding using the same embedding model used for the documents; that embedding is used to search the vector store's collection; the returned distances are converted into similarity scores (1 minus distance); and only results above a score threshold are kept and returned as context.",
+    "expected_source": "~1:18:48-1:30:23.",
+    "type": "medium"
+  },
+  {
+    "id": 13,
+    "question": "What LLM provider and model does the instructor use for the generation step, and what parameters does he set?",
+    "expected_answer": "Groq's ChatGroq, using the gemma2 model, with temperature 0.1 and a maximum of 1024 output tokens.",
+    "expected_source": "~1:33:24.",
+    "type": "easy"
+  },
+  {
+    "id": 14,
+    "question": "What's the difference between the \"simple RAG\" function and the \"advanced RAG\" function shown in the video?",
+    "expected_answer": "The simple version just returns a generated answer string. The advanced version additionally returns the sources (source file, page number, similarity score), a confidence score, and optionally the full retrieved context.",
+    "expected_source": "~1:33:24 onward, the 'answer-source RAG pipeline' section.",
+    "type": "medium"
+  },
+  {
+    "id": 15,
+    "question": "What files does the instructor create inside the source folder when converting the notebook code into a modular structure?",
+    "expected_answer": "data_loader.py, embedding.py, vector_store.py, and search.py (alongside an __init__.py to make it a package).",
+    "expected_source": "~1:30:23 through the end, the modular coding section.",
+    "type": "easy"
+  },
+  {
+    "id": 16,
+    "question": "Does the video demonstrate building a web-based user interface (e.g., with Streamlit) for the finished RAG application?",
+    "expected_answer": "Not covered — everything is run through a Jupyter notebook and a plain app.py script; no UI framework is built or shown.",
+    "expected_source": "n/a",
+    "type": "trap"
+  },
+  {
+    "id": 17,
+    "question": "What does hallucinating basically mean?",
+    "expected_answer": "It means the LLM will confidently generate its own answer even when it doesn't actually have the knowledge to answer correctly, rather than admitting it doesn't know.",
+    "expected_source": "~2:40-8:12, right after the disadvantages section defines hallucination.",
+    "type": "medium"
+  },
+  {
+    "id": 18,
+    "question": "What is data parsing?",
+    "expected_answer": "Reading unstructured or structured source data and preparing it (including deciding how to chunk it) so it can eventually be embedded and stored in a vector store.",
+    "expected_source": "~8:12-18:16, within the data injection pipeline explanation, where data parsing is introduced.",
+    "type": "easy"
+  },
+  {
+    "id": 19,
+    "question": "Why is chunking so important?",
+    "expected_answer": "Because the data needs to be saved inside a vector store, and breaking it into smaller chunks first is what makes that storage and later search effective.",
+    "expected_source": "~8:12-18:16, immediately after data parsing is introduced.",
+    "type": "easy"
+  }
+]
