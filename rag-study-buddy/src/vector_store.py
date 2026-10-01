@@ -17,7 +17,10 @@ class VectorStore:
         self.persist_directory = persist_directory
         os.makedirs(self.persist_directory, exist_ok=True)
         self.client = chromadb.PersistentClient(path=self.persist_directory)
-        self.collection = self.client.get_or_create_collection(name=self.collection_name)
+        self.collection = self.client.get_or_create_collection(
+            name=self.collection_name,
+            metadata={"hnsw:space": "cosine"},
+        )
         print(f"Vector store ready. Existing documents in collection: {self.collection.count()}")
 
     def add_documents(self, documents: list, embeddings) -> None:
